@@ -16,16 +16,6 @@
 		0E1C4CA82435922B0043DA93 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E1C4CA62435922B0043DA93 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0EC115FE24580C2E00F78230 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0EC115FA24580C2E00F78230 /* ServerApp.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0E1C4C89243590640043DA93;
-			remoteInfo = ServerApp;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		0E1C4C6A243590460043DA93 /* ClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E1C4C6D243590460043DA93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,7 +29,6 @@
 		0E1C4CA42435922B0043DA93 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0E1C4CA52435922B0043DA93 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		0E1C4CA62435922B0043DA93 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		0EC115FA24580C2E00F78230 /* ServerApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ServerApp.xcodeproj; path = ../ServerApp/ServerApp.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +45,6 @@
 		0E1C4C61243590460043DA93 = {
 			isa = PBXGroup;
 			children = (
-				0EC115FA24580C2E00F78230 /* ServerApp.xcodeproj */,
 				0E1C4C6C243590460043DA93 /* ClientApp */,
 				0E1C4C6B243590460043DA93 /* Products */,
 			);
@@ -86,14 +74,6 @@
 				0E1C4C79243590470043DA93 /* main.m */,
 			);
 			path = ClientApp;
-			sourceTree = "<group>";
-		};
-		0EC115FB24580C2E00F78230 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0EC115FF24580C2E00F78230 /* ServerApp.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,28 +121,12 @@
 			mainGroup = 0E1C4C61243590460043DA93;
 			productRefGroup = 0E1C4C6B243590460043DA93 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 0EC115FB24580C2E00F78230 /* Products */;
-					ProjectRef = 0EC115FA24580C2E00F78230 /* ServerApp.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				0E1C4C69243590460043DA93 /* ClientApp */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0EC115FF24580C2E00F78230 /* ServerApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ServerApp.app;
-			remoteRef = 0EC115FE24580C2E00F78230 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0E1C4C68243590460043DA93 /* Resources */ = {

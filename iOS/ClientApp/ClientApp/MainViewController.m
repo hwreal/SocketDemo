@@ -65,7 +65,12 @@
             }else{
                 printf("链接成功,socketID:%d\n",self.socketId1);
                 self.statusLabel.text = @"链接服务器成功";
-                [self monServerMsg];
+                
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                   [self monServerMsg];
+                });
+                //[self monServerMsg];
                 
             }
             printf("\n");
