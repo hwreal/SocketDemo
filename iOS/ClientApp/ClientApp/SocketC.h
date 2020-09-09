@@ -11,7 +11,11 @@
 
 #include <stdio.h>
 
-int connet(const char * addrIP);
+extern int (* orig_connect)(int fd, const struct sockaddr *, socklen_t);
+
+int createAndConnetSocket2(const char * addrIP, int port);
+int createAndConnetSocket(const char * addrIP, int port);
+
 int sendMsg(int sockfd, const void *msg);
 char * recvMsg(int sockfd);
 int closeSocket(int sockfd);

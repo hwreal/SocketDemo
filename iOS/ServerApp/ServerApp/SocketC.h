@@ -13,7 +13,7 @@
 
 int bindAndListen(void);
 int acceptSocket(int socketListen);
-int connet(const char * addrIP);
+int createAndConnetSocket(const char * addrIP, int port);
 int sendMsg(int sockfd, const void *msg);
 char * recvMsg(int sockfd);
 int closeSocket(int sockfd);

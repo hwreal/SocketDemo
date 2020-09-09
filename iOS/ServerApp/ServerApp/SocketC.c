@@ -75,40 +75,13 @@ int acceptSocket(int socketListen){
     bzero(buffer, sizeof(buffer));
     
     int socketConnect = accept(socketListen, (struct sockaddr *) &cli_addr, &clilen);
-    printf("收到请求客户端连接请求,创建socket 连接, socketConnect:%d \n",socketConnect);
+    //printf("收到请求客户端连接请求,创建socket 连接, socketConnect:%d \n",socketConnect);
     return socketConnect;
 }
 
 
-int connet(const char * addrIP)
-{
-    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    if (sockfd == -1)
-    {
-        printf("ERROR opening socket");
-        return sockfd;
-    }
-    
-    // 地址
-    struct sockaddr_in serv_addr;
-    bzero((char *) &serv_addr, sizeof(serv_addr));
-    serv_addr.sin_family = AF_INET;
-    serv_addr.sin_addr.s_addr = inet_addr(addrIP);//inet_ntoa
-    serv_addr.sin_port = htons(SOCKET_PORT);
-    
-    
-    int connectResult = connect(sockfd,(struct sockaddr *)&serv_addr,sizeof(serv_addr));
-    if (connectResult == -1) {
-        printf("ERROR connecting");
-        return connectResult;
-    }
-    
-    return sockfd;
-}
-
-
 int sendMsg(int sockfd, const void *msg){
-    ssize_t sRet = send(sockfd, msg, sizeof(msg), 0);
+    ssize_t sRet = send(sockfd, msg, strlen(msg), 0);
     return (int)sRet;
 }
 

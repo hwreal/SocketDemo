@@ -31,7 +31,7 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"服务端";
     self.socketListen = bindAndListen();
-    NSLog(@"*** viewDidLoad 创建监听socket:%d",self.socketListen);
+    NSLog(@"*** viewDidLoad 服务端创建并监听socket:%d",self.socketListen);
     
     self.socketConnectArr = [[NSMutableArray alloc] initWithCapacity:10];
     [self.socketConnectArr removeAllObjects];
@@ -50,14 +50,14 @@
     dispatch_async(globalQueue, ^{
         
         while (YES) {
-            NSLog(@"*** 开始监听客户端的连接 monClientConnect%@",[NSThread currentThread]);
+            NSLog(@"*** 服务端开始等待客户端的连接 monClientConnect, 线程:%@",[NSThread currentThread]);
             int socketConnect = acceptSocket(self.socketListen);
             if (socketConnect == -1) {
                 NSLog(@"监听出错");
                 return;
             }
             
-            NSLog(@"*** 收到客户端的连接请求,生成连接 id: %d\n\n",socketConnect);
+            NSLog(@"*** 服务端接受客户端连接,创建一个Socket: %d\n\n",socketConnect);
             NSNumber *sfd = [[NSNumber alloc] initWithInt:socketConnect];
             
             [self.socketConnectArr addObject:sfd];
@@ -89,7 +89,7 @@
     dispatch_async(globalQueue, ^{
         
         while (YES) {
-            NSLog(@"*** 开始监听客户端信息 socketConnect: %d",socketConnect);
+            NSLog(@"*** 服务端开始监听客户端信息 socketConnect: %d",socketConnect);
             char *msg = recvMsg(socketConnect);
             NSLog(@"*** 收到客户端的信息 socketConnect: %d, %s\n\n",socketConnect,msg);
             NSString *msgStr = [[NSString alloc]initWithUTF8String:msg];
